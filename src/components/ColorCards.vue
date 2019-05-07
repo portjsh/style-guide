@@ -25,8 +25,8 @@
           </g>
         </svg>
       </v-flex>
-      <v-layout row wrap justify-space-between>
-        <v-flex sm2 v-for="color in colors" :key="color.class">
+      <v-layout row wrap justify-space-between v-for="section in colors" :key="section.name">
+        <v-flex sm2 v-for="color in section.data" :key="color.class">
           <v-card :class="color.class">
             <v-card-title primary-title>
               <div>
@@ -47,51 +47,158 @@
 export default {
   data: () => ({
     show: false,
-    colors: [
-      {
-        class: "shells",
-        headline: "Shells",
-        hex: "#7123D9",
-        var: "--color-shells"
-      },
-      {
-        class: "mermaid",
-        headline: "Mermaid",
-        hex: "#bb29bb",
-        var: "--color-mermaid"
-      },
-      {
-        class: "ariel",
-        headline: "Ariel",
-        hex: "#f8e9f8",
-        var: "--color-ariel"
-      },
-      {
-        class: "elsa",
-        headline: "Elsa",
-        hex: "#e0f6f7",
-        var: "--color-elsa"
-      },
-      {
-        class: "dryink",
-        headline: "Dry Ink",
-        hex: "#63666a",
-        var: "--color-dryink"
-      },
+    colors: {
+      section: {
+        name: "Brand",
+        data: [
+          {
+            class: "shells",
+            headline: "Shells",
+            hex: "#7123D9",
+            var: "--color-shells"
+          },
+          {
+            class: "mermaid",
+            headline: "Mermaid",
+            hex: "#bb29bb",
+            var: "--color-mermaid"
+          },
+          {
+            class: "ariel",
+            headline: "Ariel",
+            hex: "#f8e9f8",
+            var: "--color-ariel"
+          },
+          {
+            class: "elsa",
+            headline: "Elsa",
+            hex: "#e0f6f7",
+            var: "--color-elsa"
+          },
+          {
+            class: "dryink",
+            headline: "Dry Ink",
+            hex: "#63666a",
+            var: "--color-dryink"
+          },
 
-      {
-        class: "blackhole",
-        headline: "BLack Hole",
-        hex: "#272525",
-        var: "--color-blackhole"
-      },
-      {
-        class: "coal",
-        headline: "Coal",
-        hex: "#444444",
-        var: "--color-coal"
+          {
+            class: "blackhole",
+            headline: "BLack Hole",
+            hex: "#272525",
+            var: "--color-blackhole"
+          },
+          {
+            class: "pencil",
+            headline: "Pencil",
+            hex: "#646464",
+            var: "--color-pencil"
+          },
+          {
+            class: "dust",
+            headline: "Dust",
+            hex: "#f4f4f4",
+            var: "--color-dust"
+          },
+          {
+            class: "eyore",
+            headline: "Eyore",
+            hex: "#bbbcbc",
+            var: "--color-eyore"
+          },
+          {
+            class: "steel",
+            headline: "Steel",
+            hex: "#ced0d0",
+            var: "--color-steel"
+          },
+          {
+            class: "gandalf",
+            headline: "Gandalf",
+            hex: "#dadbdb",
+            var: "--color-gandalf"
+          },
+          {
+            class: "londonfog",
+            headline: "London Fog",
+            hex: "#eceded",
+            var: "--color-londonfog"
+          },
+          {
+            class: "gandalfthewhite",
+            headline: "Gandalf the White",
+            hex: "#f6f7f7",
+            var: "--color-gandalfthewhite"
+          },
+          {
+            class: "coal",
+            headline: "Coal",
+            hex: "#444444",
+            var: "--color-coal"
+          },
+          {
+            class: "coal",
+            headline: "Coal",
+            hex: "#444444",
+            var: "--color-coal"
+          },
+          {
+            class: "coal",
+            headline: "Coal",
+            hex: "#444444",
+            var: "--color-coal"
+          },
+          {
+            class: "coal",
+            headline: "Coal",
+            hex: "#444444",
+            var: "--color-coal"
+          },
+          {
+            class: "coal",
+            headline: "Coal",
+            hex: "#444444",
+            var: "--color-coal"
+          },
+          {
+            class: "coal",
+            headline: "Coal",
+            hex: "#444444",
+            var: "--color-coal"
+          },
+          {
+            class: "ash",
+            headline: "Ash",
+            hex: "#979797",
+            var: "--color-ash"
+          },
+          {
+            class: "ash",
+            headline: "Ash",
+            hex: "#979797",
+            var: "--color-ash"
+          },
+          {
+            class: "ash",
+            headline: "Ash",
+            hex: "#979797",
+            var: "--color-ash"
+          },
+          {
+            class: "ash",
+            headline: "Ash",
+            hex: "#979797",
+            var: "--color-ash"
+          },
+          {
+            class: "ash",
+            headline: "Ash",
+            hex: "#979797",
+            var: "--color-ash"
+          }
+        ]
       }
-    ]
+    }
   }),
   mounted: () => {}
 };
