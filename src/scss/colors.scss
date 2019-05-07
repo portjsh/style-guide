@@ -1,96 +1,93 @@
 .headline {
-  font-family: 'proxima-nova', Arial, Helvetica, sans-serif !important;
-  font-weight: 600 !important;
+	font-family: 'proxima-nova', Arial, Helvetica, sans-serif !important;
+	font-weight: 600 !important;
 }
 
-$map: (shells: #7123D9,
-  mermaid: #BB29BB,
-  ariel: #F8E9F8,
-  elsa: #E0F6F7,
-  dryink: #63666A,
-  blackhole: #272525,
-  coal: #444444,
-  ash: #979797,
-  pencil: #646464,
-  dust: #F4F4F4,
-  eyore: #BBBCBC,
-  steel: #CED0D0,
-  gandalf: #DADBDB,
-  londonfog: #ECEDED,
-  gandalfthewhite: #F6F7F7,
-  nuskinblue: #008AB0,
-  color-error: #B2140A,
-  progress-color: #22D55C,
-  warning-color: #FCBC00,
-  information-color: #123DBA,
-  notice-color: #35B2F0,
-  lemon: #FFD700,
-  lime: #C4D600,
-  lipstick: #FF00AD,
-  tangerine: #FF5E00,
-  poppy: #E10098,
-  sea-senor: #00B5E2,
-  magic: #BB29BB,
-  raspberry: #930093,
-  astronomy: #440099,
-  babe: #37B0C9,
-  boringblue: #B9E1EA,
-  elf: #E7FAFF,
-  blossom: #FF76B9,
-  aqua: #1CD8D2,
-  dusk: #007298,
-  white: #FFFFFF,
-  black: #000000,
-  cheddar: #FFD700,
-  success: #6BC56A,
-  redshirt: #C23934,
-  olive: #7D740C,
-  redshirt-dark: #A52E29,
-  cheddar-dark: #F9B249,
-  success-dark: #64A262,
-  aqua-dark: #1F9FBE,
-  seafoam-light: #93EDC7,
-  sunset-dark: #9349B4,
-  sunset-light: #FF8782,
-
+$map: (
+	shells: #7123d9,
+	mermaid: #bb29bb,
+	ariel: #f8e9f8,
+	elsa: #e0f6f7,
+	dryink: #63666a,
+	blackhole: #272525,
+	coal: #444444,
+	ash: #979797,
+	pencil: #646464,
+	dust: #f4f4f4,
+	eyore: #bbbcbc,
+	steel: #ced0d0,
+	gandalf: #dadbdb,
+	londonfog: #eceded,
+	gandalfthewhite: #f6f7f7,
+	nuskinblue: #008ab0,
+	color-error: #b2140a,
+	progress-color: #22d55c,
+	warning-color: #fcbc00,
+	information-color: #123dba,
+	notice-color: #35b2f0,
+	lemon: #ffd700,
+	lime: #c4d600,
+	lipstick: #ff00ad,
+	tangerine: #ff5e00,
+	poppy: #e10098,
+	sea-senor: #00b5e2,
+	magic: #bb29bb,
+	raspberry: #930093,
+	astronomy: #440099,
+	babe: #37b0c9,
+	boringblue: #b9e1ea,
+	elf: #e7faff,
+	blossom: #ff76b9,
+	aqua: #1cd8d2,
+	dusk: #007298,
+	white: #ffffff,
+	black: #000000,
+	cheddar: #ffd700,
+	success: #6bc56a,
+	redshirt: #c23934,
+	olive: #7d740c,
+	redshirt-dark: #a52e29,
+	cheddar-dark: #f9b249,
+	success-dark: #64a262,
+	aqua-dark: #1f9fbe,
+	seafoam-light: #93edc7,
+	sunset-dark: #9349b4,
+	sunset-light: #ff8782
 );
 
-@each $element,
-$color in $map {
-  .#{$element} {
-    background-color: $color;
+@import './functions.scss';
 
-
-
-
-  }
+@each $element, $color in $map {
+	.#{$element} {
+		background-color: $color;
+		color: choose-contrast-color($color);
+	}
 }
 
 .v-card__title {
-  justify-content: center;
+	justify-content: center;
 }
 
 .headline,
 .hex {
-  color: white;
-  mix-blend-mode: difference;
-  text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
-
+	// color: white;
+	// mix-blend-mode: difference;
+	//text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
 }
 
 .hex {
-  font-family: 'proxima-nova-extra-condensed' !important;
-  font-weight: 400;
-  text-align: center;
+	font-family: 'proxima-nova-extra-condensed' !important;
+	font-weight: 400;
+	text-align: center;
 }
 
 .v-btn {
-  margin-left: auto;
+	margin-left: auto;
 }
 
 @media (min-width: 600px) {
-  .flex.sm2 {
-    max-width: calc(16.66666667% - 7.5px);
-    margin-bottom: 15px;
-  }
+	.flex.sm2 {
+		max-width: calc(16.66666667% - 7.5px);
+		margin-bottom: 15px;
+	}
 }
