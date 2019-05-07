@@ -567,12 +567,92 @@
         </v-flex>
       </v-layout>
     </v-layout>
+    <h2>Main Color Theme</h2>
+    <v-layout row wrap justify-space-between>
+      <v-flex sm2>
+        <v-card class="nuskinblue">
+          <v-card-title primary-title>
+            <div>
+              <div class="headline">Primary</div>
+              <div class="hex">#008AB0</div>
+            </div>
+          </v-card-title>
+          <v-divider light></v-divider>
+        </v-card>
+      </v-flex>
+      <v-flex sm2>
+        <v-card class="blackhole">
+          <v-card-title primary-title>
+            <div>
+              <div class="headline">Primary Text</div>
+              <div class="hex">#272525</div>
+            </div>
+          </v-card-title>
+          <v-divider light></v-divider>
+        </v-card>
+      </v-flex>
+      <v-flex sm2>
+        <v-card class="progress-color">
+          <v-card-title primary-title>
+            <div>
+              <div class="headline">Progress</div>
+              <div class="hex">#22D55C</div>
+            </div>
+          </v-card-title>
+          <v-divider light></v-divider>
+        </v-card>
+      </v-flex>
+      <v-flex sm2>
+        <v-card class="warning-color">
+          <v-card-title primary-title>
+            <div>
+              <div class="headline">Warning</div>
+              <div class="hex">#FCBC00</div>
+            </div>
+          </v-card-title>
+          <v-divider light></v-divider>
+        </v-card>
+      </v-flex>
+      <v-flex sm2>
+        <v-card class="information-color">
+          <v-card-title primary-title>
+            <div>
+              <div class="headline">Info</div>
+              <div class="hex">#123DBA</div>
+            </div>
+          </v-card-title>
+          <v-divider light></v-divider>
+        </v-card>
+      </v-flex>
+      <v-flex sm2>
+        <v-card class="eyore">
+          <v-card-title primary-title>
+            <div>
+              <div class="headline">Gray 1</div>
+              <div class="hex">#BBBCBC</div>
+            </div>
+          </v-card-title>
+          <v-divider light></v-divider>
+          <v-card-actions>
+            <v-btn icon @click="show = !show">
+              <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+            </v-btn>
+          </v-card-actions>
+
+          <v-slide-y-transition>
+            <v-card-text v-show="show">var(--color-gray-1)</v-card-text>
+          </v-slide-y-transition>
+        </v-card>
+      </v-flex>
+    </v-layout>
   </v-container>
 </template>
 
 <script>
 export default {
-  data: () => {}
+  data: () => ({
+    show: false
+  })
 };
 </script>
 

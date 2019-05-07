@@ -1,3 +1,8 @@
+.headline {
+  font-family: 'proxima-nova', Arial, Helvetica, sans-serif !important;
+  font-weight: 600 !important;
+}
+
 $map: (shells: #7123D9,
   mermaid: #BB29BB,
   ariel: #F8E9F8,
@@ -47,6 +52,7 @@ $map: (shells: #7123D9,
   seafoam-light: #93EDC7,
   sunset-dark: #9349B4,
   sunset-light: #FF8782,
+
 );
 
 @each $element,
@@ -68,8 +74,18 @@ $color in $map {
 .hex {
   color: white;
   mix-blend-mode: difference;
-  text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4); 
+  text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
 
+}
+
+.hex {
+  font-family: 'proxima-nova-extra-condensed' !important;
+  font-weight: 400;
+  text-align: center;
+}
+
+.v-btn {
+  margin-left: auto;
 }
 
 @media (min-width: 600px) {
