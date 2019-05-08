@@ -25,15 +25,16 @@
           </g>
         </svg>
       </v-flex>
-      <div class="section" v-for="section in colors" :key="section.name">
-        <h4>{{section.name}}</h4>
-        <div  v-for="color in section.data" :key="color.class" :class="color.class">
-                <p class="headline">{{color.headline}}</p>
-                <p class="hex">{{color.hex}}</p>
-                <p class="var">{{color.var}}</p>
-
+      <v-flex xs12 class="section" v-for="sections in colors" :key="sections.name">
+        <div class="section" v-for="section in sections" :key="section.name">
+          <h2>{{section.name}}</h2>
+          <div v-for="color in section.data" :key="color.class" :class="color.class">
+            <p class="headline">{{color.headline}}</p>
+            <p class="hex">{{color.hex}}</p>
+            <p class="var">{{color.var}}</p>
+          </div>
         </div>
-      </div>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -42,310 +43,335 @@
 export default {
   data: () => ({
     show: false,
-    colors: {
-      section: {
-        name: "Interactive Colors",
-        data: [
-          {
-            class: "shells",
-            headline: "Shells",
-            hex: "#7123D9",
-            var: "--color-shells"
-          },
-          {
-            class: "mermaid",
-            headline: "Mermaid",
-            hex: "#bb29bb",
-            var: "--color-mermaid"
-          },
-          {
-            class: "ariel",
-            headline: "Ariel",
-            hex: "#f8e9f8",
-            var: "--color-ariel"
-          },
-          {
-            class: "elsa",
-            headline: "Elsa",
-            hex: "#e0f6f7",
-            var: "--color-elsa"
-          },
-          {
-            class: "dryink",
-            headline: "Dry Ink",
-            hex: "#63666a",
-            var: "--color-dryink"
-          },
+    colors: [
+      {
+        section: {
+          name: "Interactive Colors",
+          data: [
+            {
+              class: "shells",
+              headline: "Shells",
+              hex: "#7123D9",
+              var: "--color-shells"
+            },
+            {
+              class: "mermaid",
+              headline: "Mermaid",
+              hex: "#bb29bb",
+              var: "--color-mermaid"
+            },
+            {
+              class: "ariel",
+              headline: "Ariel",
+              hex: "#f8e9f8",
+              var: "--color-ariel"
+            },
+            {
+              class: "elsa",
+              headline: "Elsa",
+              hex: "#e0f6f7",
+              var: "--color-elsa"
+            },
+            {
+              class: "dryink",
+              headline: "Dry Ink",
+              hex: "#63666a",
+              var: "--color-dryink"
+            },
 
-          {
-            class: "blackhole",
-            headline: "BLack Hole",
-            hex: "#272525",
-            var: "--color-blackhole"
-          },
-          {
-            class: "coal",
-            headline: "Coal",
-            hex: "#444444",
-            var: "--color-coal"
-          },
-          {
-            class: "ash",
-            headline: "Ash",
-            hex: "#979797",
-            var: "--color-ash"
-          },
-          {
-            class: "pencil",
-            headline: "Pencil",
-            hex: "#646464",
-            var: "--color-pencil"
-          },
-          {
-            class: "dust",
-            headline: "Dust",
-            hex: "#f4f4f4",
-            var: "--color-dust"
-          },
-          {
-            class: "eyore",
-            headline: "Eyore",
-            hex: "#bbbcbc",
-            var: "--color-eyore"
-          },
-          {
-            class: "steel",
-            headline: "Steel",
-            hex: "#ced0d0",
-            var: "--color-steel"
-          },
-          {
-            class: "gandalf",
-            headline: "Gandalf",
-            hex: "#dadbdb",
-            var: "--color-gandalf"
-          },
-          {
-            class: "londonfog",
-            headline: "London Fog",
-            hex: "#eceded",
-            var: "--color-londonfog"
-          },
-          {
-            class: "gandalfthewhite",
-            headline: "Gandalf the White",
-            hex: "#f6f7f7",
-            var: "--color-gandalfthewhite"
-          },
-          {
-            class: "nuskinblue",
-            headline: "Nuskin Blue",
-            hex: "#008ab0",
-            var: "--color-pencil"
-          },
-          {
-            class: "color-error",
-            headline: "Error",
-            hex: "#b2140a",
-            var: "--color-error"
-          },
-          {
-            class: "progress-color",
-            headline: "Progress",
-            hex: "#22d55c",
-            var: "--progress-color"
-          },
-          {
-            class: "warning-color",
-            headline: "Warning",
-            hex: "#fcbc00",
-            var: "--warning-color"
-          },
-          {
-            class: "information-color",
-            headline: "Infomation",
-            hex: "#123DBA",
-            var: "--information-color"
-          },
-          {
-            class: "notice-color",
-            headline: "Notice",
-            hex: "#35b2f0",
-            var: "--notice-color"
-          },
-          {
-            class: "lemon",
-            headline: "Lemon",
-            hex: "#ffd700",
-            var: "--lemon"
-          },
-          {
-            class: "lime",
-            headline: "Lime",
-            hex: "#c4d600",
-            var: "--lime"
-          },
-          {
-            class: "lipstick",
-            headline: "Lipstick",
-            hex: "#ff00ad",
-            var: "--lipstick"
-          },
-          {
-            class: "tangerine",
-            headline: "Tagerine",
-            hex: "#ff5e00",
-            var: "--tagerine"
-          },
-          {
-            class: "poppy",
-            headline: "Poppy",
-            hex: "#e10098",
-            var: "--poppy"
-          },
-          {
-            class: "sea-senor",
-            headline: "Sea Senor",
-            hex: "#00B5E2",
-            var: "--sea-senor"
-          },
-          {
-            class: "magic",
-            headline: "Magic",
-            hex: "#BB29BB",
-            var: "--magic"
-          },
-          {
-            class: "raspberry",
-            headline: "Raspberry",
-            hex: "#930093",
-            var: "--raspberry"
-          },
-          {
-            class: "astronomy",
-            headline: "Astronomy",
-            hex: "#440099",
-            var: "--astronomy"
-          },
-          {
-            class: "babe",
-            headline: "Babe",
-            hex: "#37b0c9",
-            var: "--babe"
-          },
-          {
-            class: "boringblue",
-            headline: "Boring Blue",
-            hex: "#b9e1ea",
-            var: "--boringblue"
-          },
-          {
-            class: "elf",
-            headline: "Elf",
-            hex: "#e7faff",
-            var: "--elf"
-          },
-          {
-            class: "blossom",
-            headline: "Blossom",
-            hex: "#ff76b9",
-            var: "--blossom"
-          },
-          {
-            class: "aqua",
-            headline: "Aqua",
-            hex: "#1CD8D2",
-            var: "--aqua"
-          },
-          {
-            class: "dusk",
-            headline: "Dusk",
-            hex: "#007298",
-            var: "--dusk"
-          },
-          {
-            class: "white",
-            headline: "White",
-            hex: "#FFFFFF",
-            var: "--white"
-          },
-          {
-            class: "black",
-            headline: "Black",
-            hex: "#000000",
-            var: "--black"
-          },
-          {
-            class: "cheddar",
-            headline: "Cheddar",
-            hex: "#FFD700",
-            var: "--cheddar"
-          },
-          {
-            class: "success",
-            headline: "Success",
-            hex: "#6BC56A",
-            var: "--success"
-          },
-          {
-            class: "redshirt",
-            headline: "Red Shirt",
-            hex: "#C23934",
-            var: "--redshirt"
-          },
-          {
-            class: "olive",
-            headline: "Olive",
-            hex: "#7D740C",
-            var: "--olive"
-          },
-          {
-            class: "redshirt-dark",
-            headline: "Red Shirt Dark",
-            hex: "#7D740C",
-            var: "--redshirt-dark"
-          },
-          {
-            class: "cheddar-dark",
-            headline: "Cheddar Dark",
-            hex: "#F9B249",
-            var: "--cheddar-dark"
-          },
-          {
-            class: "success-dark",
-            headline: "Success Dark",
-            hex: "#64A262",
-            var: "--success-dark"
-          },
-          {
-            class: "aqua-dark",
-            headline: "Aqua Dark",
-            hex: "#1F9FBE",
-            var: "--aqua-dark"
-          },
-          {
-            class: "seafoam-light",
-            headline: "Seafoam Light",
-            hex: "#93EDC7",
-            var: "--seafoam-light"
-          },
-          {
-            class: "sunset-dark",
-            headline: "Sunset Dark",
-            hex: "#9349B4",
-            var: "--sunset-dark"
-          },
-          {
-            class: "sunset-light",
-            headline: "Sunset Light",
-            hex: "#FF8782",
-            var: "--sunset-light"
-          },
-          
-        ]
+            {
+              class: "blackhole",
+              headline: "BLack Hole",
+              hex: "#272525",
+              var: "--color-blackhole"
+            },
+            {
+              class: "coal",
+              headline: "Coal",
+              hex: "#444444",
+              var: "--color-coal"
+            },
+            {
+              class: "ash",
+              headline: "Ash",
+              hex: "#979797",
+              var: "--color-ash"
+            },
+            {
+              class: "pencil",
+              headline: "Pencil",
+              hex: "#646464",
+              var: "--color-pencil"
+            },
+            {
+              class: "dust",
+              headline: "Dust",
+              hex: "#f4f4f4",
+              var: "--color-dust"
+            },
+            {
+              class: "eyore",
+              headline: "Eyore",
+              hex: "#bbbcbc",
+              var: "--color-eyore"
+            },
+            {
+              class: "steel",
+              headline: "Steel",
+              hex: "#ced0d0",
+              var: "--color-steel"
+            },
+            {
+              class: "gandalf",
+              headline: "Gandalf",
+              hex: "#dadbdb",
+              var: "--color-gandalf"
+            },
+            {
+              class: "londonfog",
+              headline: "London Fog",
+              hex: "#eceded",
+              var: "--color-londonfog"
+            },
+            {
+              class: "gandalfthewhite",
+              headline: "Gandalf the White",
+              hex: "#f6f7f7",
+              var: "--color-gandalfthewhite"
+            },
+            {
+              class: "nuskinblue",
+              headline: "Nuskin Blue",
+              hex: "#008ab0",
+              var: "--color-pencil"
+            },
+            {
+              class: "color-error",
+              headline: "Error",
+              hex: "#b2140a",
+              var: "--color-error"
+            },
+            {
+              class: "progress-color",
+              headline: "Progress",
+              hex: "#22d55c",
+              var: "--progress-color"
+            },
+            {
+              class: "warning-color",
+              headline: "Warning",
+              hex: "#fcbc00",
+              var: "--warning-color"
+            },
+            {
+              class: "information-color",
+              headline: "Infomation",
+              hex: "#123DBA",
+              var: "--information-color"
+            },
+            {
+              class: "notice-color",
+              headline: "Notice",
+              hex: "#35b2f0",
+              var: "--notice-color"
+            },
+            {
+              class: "lemon",
+              headline: "Lemon",
+              hex: "#ffd700",
+              var: "--lemon"
+            },
+            {
+              class: "lime",
+              headline: "Lime",
+              hex: "#c4d600",
+              var: "--lime"
+            },
+            {
+              class: "lipstick",
+              headline: "Lipstick",
+              hex: "#ff00ad",
+              var: "--lipstick"
+            },
+            {
+              class: "tangerine",
+              headline: "Tagerine",
+              hex: "#ff5e00",
+              var: "--tagerine"
+            },
+            {
+              class: "poppy",
+              headline: "Poppy",
+              hex: "#e10098",
+              var: "--poppy"
+            },
+            {
+              class: "sea-senor",
+              headline: "Sea Senor",
+              hex: "#00B5E2",
+              var: "--sea-senor"
+            },
+            {
+              class: "magic",
+              headline: "Magic",
+              hex: "#BB29BB",
+              var: "--magic"
+            },
+            {
+              class: "raspberry",
+              headline: "Raspberry",
+              hex: "#930093",
+              var: "--raspberry"
+            },
+            {
+              class: "astronomy",
+              headline: "Astronomy",
+              hex: "#440099",
+              var: "--astronomy"
+            },
+            {
+              class: "babe",
+              headline: "Babe",
+              hex: "#37b0c9",
+              var: "--babe"
+            },
+            {
+              class: "boringblue",
+              headline: "Boring Blue",
+              hex: "#b9e1ea",
+              var: "--boringblue"
+            },
+            {
+              class: "elf",
+              headline: "Elf",
+              hex: "#e7faff",
+              var: "--elf"
+            },
+            {
+              class: "blossom",
+              headline: "Blossom",
+              hex: "#ff76b9",
+              var: "--blossom"
+            },
+            {
+              class: "aqua",
+              headline: "Aqua",
+              hex: "#1CD8D2",
+              var: "--aqua"
+            },
+            {
+              class: "dusk",
+              headline: "Dusk",
+              hex: "#007298",
+              var: "--dusk"
+            },
+            {
+              class: "white",
+              headline: "White",
+              hex: "#FFFFFF",
+              var: "--white"
+            },
+            {
+              class: "black",
+              headline: "Black",
+              hex: "#000000",
+              var: "--black"
+            },
+            {
+              class: "cheddar",
+              headline: "Cheddar",
+              hex: "#FFD700",
+              var: "--cheddar"
+            },
+            {
+              class: "success",
+              headline: "Success",
+              hex: "#6BC56A",
+              var: "--success"
+            },
+            {
+              class: "redshirt",
+              headline: "Red Shirt",
+              hex: "#C23934",
+              var: "--redshirt"
+            },
+            {
+              class: "olive",
+              headline: "Olive",
+              hex: "#7D740C",
+              var: "--olive"
+            },
+            {
+              class: "redshirt-dark",
+              headline: "Red Shirt Dark",
+              hex: "#7D740C",
+              var: "--redshirt-dark"
+            },
+            {
+              class: "cheddar-dark",
+              headline: "Cheddar Dark",
+              hex: "#F9B249",
+              var: "--cheddar-dark"
+            },
+            {
+              class: "success-dark",
+              headline: "Success Dark",
+              hex: "#64A262",
+              var: "--success-dark"
+            },
+            {
+              class: "aqua-dark",
+              headline: "Aqua Dark",
+              hex: "#1F9FBE",
+              var: "--aqua-dark"
+            },
+            {
+              class: "seafoam-light",
+              headline: "Seafoam Light",
+              hex: "#93EDC7",
+              var: "--seafoam-light"
+            },
+            {
+              class: "sunset-dark",
+              headline: "Sunset Dark",
+              hex: "#9349B4",
+              var: "--sunset-dark"
+            },
+            {
+              class: "sunset-light",
+              headline: "Sunset Light",
+              hex: "#FF8782",
+              var: "--sunset-light"
+            }
+          ]
+        }
+      },
+      {
+        section: {
+          name: "something",
+          data: [
+            {
+              class: "shells",
+              headline: "Shells",
+              hex: "#7123D9",
+              var: "--color-shells"
+            },
+            {
+              class: "mermaid",
+              headline: "Mermaid",
+              hex: "#bb29bb",
+              var: "--color-mermaid"
+            },
+            {
+              class: "ariel",
+              headline: "Ariel",
+              hex: "#f8e9f8",
+              var: "--color-ariel"
+            }
+          ]
+        }
       }
-
-    }
+    ]
   }),
   mounted: () => {}
 };
