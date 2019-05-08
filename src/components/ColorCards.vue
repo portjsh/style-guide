@@ -41,6 +41,10 @@
           </div>
         </div>
       </v-flex>
+      <v-flex sm12>
+        <div class="progress-color feedback" v-if="copySucceeded === true">Copy Successful</div>
+        <div class="color-error" v-if="copySucceeded === false">Copy Successful</div>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -49,6 +53,7 @@
 export default {
   data: () => ({
     show: false,
+    copySucceeded: null,
     colors: [
       {
         section: {
@@ -380,11 +385,12 @@ export default {
     ]
   }),
   methods: {
-    onCopy: function(e) {
-      alert("You just copied: " + e.text);
+    onCopy: function() {
+      this.copySucceeded = true;
+      setTimeout(() => (this.copySucceeded = false), 1500);
     },
-    onError: function(e) {
-      alert("Failed to copy texts");
+    onError: function() {
+      this.copySucceeded = false;
     }
   },
 
