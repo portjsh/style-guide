@@ -43,7 +43,7 @@
       </v-flex>
       <v-flex sm12>
         <div class="progress-color feedback" v-if="copySucceeded === true">Copy Successful</div>
-        <div class="color-error" v-if="copySucceeded === false">Copy Successful</div>
+        <div class="color-error" v-if="copySucceeded === false && show === true">Copy Successful</div>
       </v-flex>
     </v-layout>
   </v-container>
