@@ -1,78 +1,87 @@
-$map: (
-	shells: #7123d9,
-	mermaid: #bb29bb,
-	ariel: #f8e9f8,
-	elsa: #e0f6f7,
-	dryink: #63666a,
-	blackhole: #272525,
-	coal: #444444,
-	ash: #979797,
-	pencil: #646464,
-	dust: #f4f4f4,
-	eyore: #bbbcbc,
-	steel: #ced0d0,
-	gandalf: #dadbdb,
-	londonfog: #eceded,
-	gandalfthewhite: #f6f7f7,
-	nuskinblue: #008ab0,
-	color-error: #b2140a,
-	progress-color: #22d55c,
-	warning-color: #fcbc00,
-	information-color: #123dba,
-	notice-color: #35b2f0,
-	lemon: #ffd700,
-	lime: #c4d600,
-	lipstick: #ff00ad,
-	tangerine: #ff5e00,
-	poppy: #e10098,
-	sea-senor: #00b5e2,
-	magic: #bb29bb,
-	raspberry: #930093,
-	astronomy: #440099,
-	babe: #37b0c9,
-	boringblue: #b9e1ea,
-	elf: #e7faff,
-	blossom: #ff76b9,
-	aqua: #1cd8d2,
-	dusk: #007298,
-	white: #ffffff,
-	black: #000000,
-	cheddar: #ffd700,
-	success: #6bc56a,
-	redshirt: #c23934,
-	olive: #7d740c,
-	redshirt-dark: #a52e29,
-	cheddar-dark: #f9b249,
-	success-dark: #64a262,
-	aqua-dark: #1f9fbe,
-	seafoam-light: #93edc7,
-	sunset-dark: #9349b4,
-	sunset-light: #ff8782
-);
+$map: (shells: #7123d9,
+  mermaid: #bb29bb,
+  ariel: #f8e9f8,
+  elsa: #e0f6f7,
+  dryink: #63666a,
+  blackhole: #272525,
+  coal: #444444,
+  ash: #979797,
+  pencil: #646464,
+  dust: #f4f4f4,
+  eyore: #bbbcbc,
+  steel: #ced0d0,
+  gandalf: #dadbdb,
+  londonfog: #eceded,
+  gandalfthewhite: #f6f7f7,
+  nuskinblue: #008ab0,
+  color-error: #b2140a,
+  progress-color: #22d55c,
+  warning-color: #fcbc00,
+  information-color: #123dba,
+  notice-color: #35b2f0,
+  lemon: #ffd700,
+  lime: #c4d600,
+  lipstick: #ff00ad,
+  tangerine: #ff5e00,
+  poppy: #e10098,
+  sea-senor: #00b5e2,
+  magic: #bb29bb,
+  raspberry: #930093,
+  astronomy: #440099,
+  babe: #37b0c9,
+  boringblue: #b9e1ea,
+  elf: #e7faff,
+  blossom: #ff76b9,
+  aqua: #1cd8d2,
+  dusk: #007298,
+  white: #ffffff,
+  black: #000000,
+  cheddar: #ffd700,
+  success: #6bc56a,
+  redshirt: #c23934,
+  olive: #7d740c,
+  redshirt-dark: #a52e29,
+  cheddar-dark: #f9b249,
+  success-dark: #64a262,
+  aqua-dark: #1f9fbe,
+  seafoam-light: #93edc7,
+  sunset-dark: #9349b4,
+  sunset-light: #ff8782);
 
 @import './functions.scss';
-html{
+
+html {
   font-size: 16px;
   box-sizing: border-box;
 }
-@each $element, $color in $map {
-	.#{$element} {
-		background-color: $color;
-		color: choose-contrast-color($color);
-	}
+
+@each $element,
+$color in $map {
+  .#{$element} {
+    background-color: $color;
+    color: choose-contrast-color($color);
+
+    button {
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 5px;
+    }
+  }
 }
 
+
 .v-card__title {
-	justify-content: center;
+  justify-content: center;
 }
 
 .headline {
-	font-family: 'proxima-nova', Arial, Helvetica, sans-serif !important;
-	font-weight: 600 !important;
+  font-family: 'proxima-nova', Arial, Helvetica, sans-serif !important;
+  font-weight: 600 !important;
 }
+
 .hex {
-	font-family: 'proxima-nova-extra-condensed' !important;
-	font-weight: 400;
+  font-family: 'proxima-nova-extra-condensed' !important;
+  font-weight: 400;
   text-align: center;
   font-size: 2rem;
 }
@@ -80,31 +89,27 @@ html{
 .section {
   display: grid;
   grid-gap: 1.2rem;
-  grid-auto-rows: 200px;
+  grid-auto-rows: auto;
   margin-bottom: 3.2rem;
-  grid-template-columns: repeat(auto-fit ,minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   width: 100%;
   position: relative;
+
   h4 {
     font-size: 1.2rem;
     font-weight: 600;
     position: absolute;
     top: -30px;
   }
+
   div {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 4px 0 rgba(18,19,21,.12), 0 4px 12px 0 rgba(18,19,21,.12);
+    box-shadow: 0 0 4px 0 rgba(18, 19, 21, .12), 0 4px 12px 0 rgba(18, 19, 21, .12);
     border-radius: .4rem;
     padding: 1.6rem;
     flex-flow: column nowrap;
 
   }
-}
-@media (min-width: 600px) {
-	.flex.sm2 {
-		max-width: calc(16.66666667% - 7.5px);
-		margin-bottom: 15px;
-	}
 }

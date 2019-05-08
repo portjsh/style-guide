@@ -25,13 +25,19 @@
           </g>
         </svg>
       </v-flex>
-      <v-flex xs12 class="section" v-for="sections in colors" :key="sections.name">
+      <v-flex xs12 class="container" v-for="sections in colors" :key="sections.name">
         <div class="section" v-for="section in sections" :key="section.name">
-          <h2>{{section.name}}</h2>
+          <h4>{{section.name}}</h4>
           <div v-for="color in section.data" :key="color.class" :class="color.class">
             <p class="headline">{{color.headline}}</p>
             <p class="hex">{{color.hex}}</p>
             <p class="var">{{color.var}}</p>
+            <button
+              type="button"
+              v-clipboard:copy="color.var"
+              v-clipboard:success="onCopy"
+              v-clipboard:error="onError"
+            >Copy!</button>
           </div>
         </div>
       </v-flex>
@@ -373,6 +379,15 @@ export default {
       }
     ]
   }),
+  methods: {
+    onCopy: function(e) {
+      alert("You just copied: " + e.text);
+    },
+    onError: function(e) {
+      alert("Failed to copy texts");
+    }
+  },
+
   mounted: () => {}
 };
 </script>
