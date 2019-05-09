@@ -7,18 +7,21 @@
           <div v-for="color in section.data" :key="color.id" class="color-wrapper">
             <div class="left-side">
               <div class="square" :class="color.class"></div>
-              <button
-                :class="'class-'+color.class+ ' '+color.class"
-                type="button"
-                v-clipboard:copy="color.var"
-                v-clipboard:success="onCopy"
-                v-clipboard:error="onError"
-              >Copy!</button>
             </div>
             <div class="right-side">
               <p class="headline">{{color.headline}}</p>
-              <p class="hex">{{color.hex}}</p>
-              <p class="var">{{color.var}}</p>
+              <p
+                class="hex"
+                v-clipboard:copy="color.hex"
+                v-clipboard:success="onCopy"
+                v-clipboard:error="onError"
+              >{{color.hex}}</p>
+              <p
+                class="var"
+                v-clipboard:copy="color.var"
+                v-clipboard:success="onCopy"
+                v-clipboard:error="onError"
+              >{{color.var}}</p>
             </div>
           </div>
         </div>
