@@ -61,18 +61,24 @@ $color in $map {
     background-color: $color;
     color: choose-contrast-color($color);
 
-    button {
-      border: 1px solid;
-      border-radius: 5px;
-      padding: 5px;
-      width: 75%;
-
-      &:hover {
-        box-shadow: 0 0 4px 0 rgba(18, 19, 21, 0.12),
-          0 4px 12px 0 rgba(18, 19, 21, 0.12);
-        animation: pulse .5s forwards;
-      }
+    button.#{$element} {
+      background-color: $color;
+      color: choose-contrast-color($color);
     }
+  }
+}
+
+button[class^='class-'] {
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 5px;
+  width: 100%;
+  margin-top: 10px;
+
+  &:hover {
+    box-shadow: 0 0 4px 0 rgba(18, 19, 21, 0.12),
+      0 4px 12px 0 rgba(18, 19, 21, 0.12);
+    animation: pulse .5s forwards;
   }
 }
 
@@ -80,20 +86,21 @@ $color in $map {
   font-size: 18px !important;
 }
 
-.v-card__title {
-  justify-content: center;
-}
 
 .headline {
   font-family: 'proxima-nova', Arial, Helvetica, sans-serif !important;
   font-weight: 600 !important;
+  font-size: 16px !important;
 }
 
-.hex {
+.hex,
+.var {
   font-family: 'proxima-nova-extra-condensed' !important;
   font-weight: 400;
-  text-align: center;
-  font-size: 2rem;
+  text-align: left;
+  font-size: 1em;
+  color: #63666a;
+  font-style: italic;
 }
 
 .section {
@@ -114,19 +121,36 @@ $color in $map {
   }
 
   div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 4px 0 rgba(18, 19, 21, 0.12),
-      0 4px 12px 0 rgba(18, 19, 21, 0.12);
-    border-radius: 0.4rem;
-    padding: 1.6rem;
-    flex-flow: column nowrap;
+    &.color-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
 
-    &:hover {
-      transition: .5s;
+      flex-flow: row wrap;
 
-      cursor: pointer;
+      .left-side {
+        .square {
+          width: 75px;
+          height: 75px;
+          border: 1px solid #63666a !important;
+
+          &:hover {
+            box-shadow: 0 0 4px 0 rgba(18, 19, 21, 0.12),
+              0 4px 12px 0 rgba(18, 19, 21, 0.12);
+          }
+        }
+
+        margin-right: 15px;
+      }
+
+      .right-side {
+
+        margin-right: auto;
+
+        p {
+          margin: 0;
+        }
+      }
 
     }
   }
@@ -152,15 +176,12 @@ $color in $map {
     transform: scale3d(1, 1, 1);
   }
 
-  50% {
+  to {
     -webkit-transform: scale3d(1.05, 1.05, 1.05);
     transform: scale3d(1.05, 1.05, 1.05);
   }
 
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
+
 }
 
 @keyframes pulse {
@@ -169,13 +190,10 @@ $color in $map {
     transform: scale3d(1, 1, 1);
   }
 
-  50% {
+  to {
     -webkit-transform: scale3d(1.05, 1.05, 1.05);
     transform: scale3d(1.05, 1.05, 1.05);
   }
 
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
+
 }

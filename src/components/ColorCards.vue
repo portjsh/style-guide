@@ -1,20 +1,25 @@
 <template>
   <v-container>
     <v-layout text-xs-center wrap>
-      
       <v-flex xs12 class="container" v-for="sections in colors" :key="sections.name">
         <div class="section" v-for="section in sections" :key="section.name">
           <h4>{{section.name}}</h4>
-          <div v-for="color in section.data" :key="color.id" :class="color.class">
-            <p class="headline">{{color.headline}}</p>
-            <p class="hex">{{color.hex}}</p>
-            <p class="var">{{color.var}}</p>
-            <button
-              type="button"
-              v-clipboard:copy="color.var"
-              v-clipboard:success="onCopy"
-              v-clipboard:error="onError"
-            >Copy!</button>
+          <div v-for="color in section.data" :key="color.id" class="color-wrapper">
+            <div class="left-side">
+              <div class="square" :class="color.class"></div>
+              <button
+                :class="'class-'+color.class+ ' '+color.class"
+                type="button"
+                v-clipboard:copy="color.var"
+                v-clipboard:success="onCopy"
+                v-clipboard:error="onError"
+              >Copy!</button>
+            </div>
+            <div class="right-side">
+              <p class="headline">{{color.headline}}</p>
+              <p class="hex">{{color.hex}}</p>
+              <p class="var">{{color.var}}</p>
+            </div>
           </div>
         </div>
       </v-flex>
@@ -278,146 +283,7 @@ export default {
           ]
         }
       },
-      {
-        section: {
-          name: "Deprecated Colors",
-          data: [
-            {
-              id: 32,
-              class: "babe",
-              headline: "Babe",
-              hex: "#37b0c9",
-              var: "--babe"
-            },
-            {
-              id: 33,
-              class: "boringblue",
-              headline: "Boring Blue",
-              hex: "#b9e1ea",
-              var: "--boringblue"
-            },
-            {
-              id: 34,
-              class: "elf",
-              headline: "Elf",
-              hex: "#e7faff",
-              var: "--elf"
-            },
-            {
-              id: 35,
-              class: "blossom",
-              headline: "Blossom",
-              hex: "#ff76b9",
-              var: "--blossom"
-            },
-            {
-              id: 36,
-              class: "aqua",
-              headline: "Aqua",
-              hex: "#1CD8D2",
-              var: "--aqua"
-            },
-            {
-              id: 37,
-              class: "dusk",
-              headline: "Dusk",
-              hex: "#007298",
-              var: "--dusk"
-            },
-            {
-              id: 38,
-              class: "white",
-              headline: "White",
-              hex: "#FFFFFF",
-              var: "--white"
-            },
-            {
-              id: 39,
-              class: "black",
-              headline: "Black",
-              hex: "#000000",
-              var: "--black"
-            },
-            {
-              id: 41,
-              class: "cheddar",
-              headline: "Cheddar",
-              hex: "#FFD700",
-              var: "--cheddar"
-            },
-            {
-              id: 42,
-              class: "success",
-              headline: "Success",
-              hex: "#6BC56A",
-              var: "--success"
-            },
-            {
-              id: 43,
-              class: "redshirt",
-              headline: "Red Shirt",
-              hex: "#C23934",
-              var: "--redshirt"
-            },
-            {
-              id: 44,
-              class: "olive",
-              headline: "Olive",
-              hex: "#7D740C",
-              var: "--olive"
-            },
-            {
-              id: 45,
-              class: "redshirt-dark",
-              headline: "Red Shirt Dark",
-              hex: "#7D740C",
-              var: "--redshirt-dark"
-            },
-            {
-              id: 46,
-              class: "cheddar-dark",
-              headline: "Cheddar Dark",
-              hex: "#F9B249",
-              var: "--cheddar-dark"
-            },
-            {
-              id: 47,
-              class: "success-dark",
-              headline: "Success Dark",
-              hex: "#64A262",
-              var: "--success-dark"
-            },
-            {
-              id: 48,
-              class: "aqua-dark",
-              headline: "Aqua Dark",
-              hex: "#1F9FBE",
-              var: "--aqua-dark"
-            },
-            {
-              id: 49,
-              class: "seafoam-light",
-              headline: "Seafoam Light",
-              hex: "#93EDC7",
-              var: "--seafoam-light"
-            },
-            {
-              id: 50,
-              class: "sunset-dark",
-              headline: "Sunset Dark",
-              hex: "#9349B4",
-              var: "--sunset-dark"
-            },
-            {
-              id: 51,
-              class: "sunset-light",
-              headline: "Sunset Light",
-              hex: "#FF8782",
-              var: "--sunset-light"
-            }
-          ]
-        }
-      },
+
       {
         section: {
           name: "Main Theme",
@@ -631,7 +497,147 @@ export default {
               headline: "Expressive 8",
               hex: "#440099",
               var: "--color-expressive-8"
+            }
+          ]
+        }
+      },
+      {
+        section: {
+          name: "Deprecated Colors",
+          data: [
+            {
+              id: 32,
+              class: "babe",
+              headline: "Babe",
+              hex: "#37b0c9",
+              var: "--babe"
             },
+            {
+              id: 33,
+              class: "boringblue",
+              headline: "Boring Blue",
+              hex: "#b9e1ea",
+              var: "--boringblue"
+            },
+            {
+              id: 34,
+              class: "elf",
+              headline: "Elf",
+              hex: "#e7faff",
+              var: "--elf"
+            },
+            {
+              id: 35,
+              class: "blossom",
+              headline: "Blossom",
+              hex: "#ff76b9",
+              var: "--blossom"
+            },
+            {
+              id: 36,
+              class: "aqua",
+              headline: "Aqua",
+              hex: "#1CD8D2",
+              var: "--aqua"
+            },
+            {
+              id: 37,
+              class: "dusk",
+              headline: "Dusk",
+              hex: "#007298",
+              var: "--dusk"
+            },
+            {
+              id: 38,
+              class: "white",
+              headline: "White",
+              hex: "#FFFFFF",
+              var: "--white"
+            },
+            {
+              id: 39,
+              class: "black",
+              headline: "Black",
+              hex: "#000000",
+              var: "--black"
+            },
+            {
+              id: 41,
+              class: "cheddar",
+              headline: "Cheddar",
+              hex: "#FFD700",
+              var: "--cheddar"
+            },
+            {
+              id: 42,
+              class: "success",
+              headline: "Success",
+              hex: "#6BC56A",
+              var: "--success"
+            },
+            {
+              id: 43,
+              class: "redshirt",
+              headline: "Red Shirt",
+              hex: "#C23934",
+              var: "--redshirt"
+            },
+            {
+              id: 44,
+              class: "olive",
+              headline: "Olive",
+              hex: "#7D740C",
+              var: "--olive"
+            },
+            {
+              id: 45,
+              class: "redshirt-dark",
+              headline: "Red Shirt Dark",
+              hex: "#7D740C",
+              var: "--redshirt-dark"
+            },
+            {
+              id: 46,
+              class: "cheddar-dark",
+              headline: "Cheddar Dark",
+              hex: "#F9B249",
+              var: "--cheddar-dark"
+            },
+            {
+              id: 47,
+              class: "success-dark",
+              headline: "Success Dark",
+              hex: "#64A262",
+              var: "--success-dark"
+            },
+            {
+              id: 48,
+              class: "aqua-dark",
+              headline: "Aqua Dark",
+              hex: "#1F9FBE",
+              var: "--aqua-dark"
+            },
+            {
+              id: 49,
+              class: "seafoam-light",
+              headline: "Seafoam Light",
+              hex: "#93EDC7",
+              var: "--seafoam-light"
+            },
+            {
+              id: 50,
+              class: "sunset-dark",
+              headline: "Sunset Dark",
+              hex: "#9349B4",
+              var: "--sunset-dark"
+            },
+            {
+              id: 51,
+              class: "sunset-light",
+              headline: "Sunset Light",
+              hex: "#FF8782",
+              var: "--sunset-light"
+            }
           ]
         }
       }
