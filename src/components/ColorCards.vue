@@ -308,21 +308,21 @@ export default {
             {
               id: 54,
               class: "progress-color",
-              headline: "Color Progress",
+              headline: "Progress",
               hex: "#22D55C",
               var: "--color-progess"
             },
             {
               id: 55,
               class: "warning-color",
-              headline: "Color Warning",
+              headline: "Warning",
               hex: "#FCBC00",
               var: "--color-warning"
             },
             {
               id: 56,
               class: "information-color",
-              headline: "Color Information",
+              headline: "Information",
               hex: "#123DBA",
               var: "--color-information"
             },
