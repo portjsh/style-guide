@@ -46,7 +46,11 @@ $map: (shells: #7123d9,
   aqua-dark: #1f9fbe,
   seafoam-light: #93edc7,
   sunset-dark: #9349b4,
-  sunset-light: #ff8782);
+  sunset-light: #ff8782,
+  annonation-1: #e3008a,
+  annonation-2: #0040ff,
+
+);
 
 @import './functions.scss';
 
@@ -73,6 +77,8 @@ $color in $map {
   font-family: 'proxima-nova', Arial, Helvetica, sans-serif !important;
   font-weight: 600 !important;
   font-size: 16px !important;
+  line-height: 16px !important;
+  text-align: left !important;
 }
 
 .hex,
@@ -80,7 +86,8 @@ $color in $map {
   font-family: 'proxima-nova-extra-condensed' !important;
   font-weight: 400;
   text-align: left;
-  font-size: 1em;
+  font-size: 1.2em;
+  line-height: 1.2em;
   color: #63666a;
 
   &:hover {
