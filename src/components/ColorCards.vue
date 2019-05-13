@@ -15,7 +15,7 @@
                 v-clipboard:copy="color.hex"
                 v-clipboard:success="onCopy"
                 v-clipboard:error="onError"
-              >{{color.hex}}</p>
+              >{{color.hex}}</P>
               <p
                 class="var"
                 v-clipboard:copy="color.var"
@@ -53,7 +53,7 @@ export default {
             {
               class: "mermaid",
               headline: "Mermaid",
-              hex: "#bb29bb",
+              hex: "#BB29BB",
               var: "--color-mermaid"
             },
             {
@@ -65,7 +65,7 @@ export default {
             {
               class: "ariel",
               headline: "Ariel",
-              hex: "#f8e9f8",
+              hex: "#F8E9F8",
               var: "--color-ariel"
             },
             {
@@ -77,7 +77,7 @@ export default {
             {
               class: "dryink",
               headline: "Dry Ink",
-              hex: "#63666a",
+              hex: "#63666A",
               var: "--color-dryink"
             },
             {
@@ -89,7 +89,7 @@ export default {
             {
               class: "elsa",
               headline: "Elsa",
-              hex: "#e0f6f7",
+              hex: "#E0F6F7",
               var: "--color-elsa"
             }
           ]
@@ -102,25 +102,25 @@ export default {
             {
               class: "eyore",
               headline: "Eyore",
-              hex: "#bbbcbc",
+              hex: "#BBBCBC",
               var: "--color-eyore"
             },
             {
               class: "steel",
               headline: "Steel",
-              hex: "#ced0d0",
+              hex: "#CED0D0",
               var: "--color-steel"
             },
             {
               class: "gandalf",
               headline: "Gandalf",
-              hex: "#dadbdb",
+              hex: "#DADBDB",
               var: "--color-gandalf"
             },
             {
               class: "londonfog",
               headline: "London Fog",
-              hex: "#eceded",
+              hex: "#ECEDED",
               var: "--color-londonfog"
             }
           ]
@@ -133,7 +133,7 @@ export default {
             {
               class: "gandalfthewhite",
               headline: "Gandalf the White",
-              hex: "#f6f7f7",
+              hex: "#F6F7F7",
               var: "--color-gandalfthewhite"
             },
             {
@@ -145,7 +145,7 @@ export default {
             {
               class: "nuskinblue",
               headline: "Nuskin Blue",
-              hex: "#008ab0",
+              hex: "#008AB0",
               var: "--color-pencil"
             }
           ]
@@ -158,19 +158,19 @@ export default {
             {
               class: "color-error",
               headline: "Error",
-              hex: "#b2140a",
+              hex: "#B2140A",
               var: "--color-error"
             },
             {
               class: "progress-color",
               headline: "Progress",
-              hex: "#22d55c",
+              hex: "#22D55C",
               var: "--progress-color"
             },
             {
               class: "warning-color",
               headline: "Warning",
-              hex: "#fcbc00",
+              hex: "#FCBC00",
               var: "--warning-color"
             },
             {
@@ -189,25 +189,25 @@ export default {
             {
               class: "lemon",
               headline: "Lemon",
-              hex: "#ffd700",
+              hex: "#FFD700",
               var: "--lemon"
             },
             {
               class: "lime",
               headline: "Lime",
-              hex: "#c4d600",
+              hex: "#C4D600",
               var: "--lime"
             },
             {
               class: "tangerine",
               headline: "Tagerine",
-              hex: "#ff5e00",
+              hex: "#FF5E00",
               var: "--tagerine"
             },
             {
               class: "poppy",
               headline: "Poppy",
-              hex: "#e10098",
+              hex: "#E10098",
               var: "--poppy"
             },
             {
@@ -237,12 +237,12 @@ export default {
           data: [
             {
               class: "annonation-1",
-              hex: "#e3008a",
+              hex: "#E3008A",
               var: "annonation-1"
             },
             {
               class: "annonation-2",
-              hex: "#0040ff",
+              hex: "#0040FF",
               var: "annonation-2"
             }
           ]
